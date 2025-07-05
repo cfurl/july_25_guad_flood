@@ -1,0 +1,54 @@
+N Fk Guadalupe Rv nr Hunt, TX - 08165300
+Latitude 30°03'50",   Longitude 99°23'12"   NAD27
+Kerr County, Texas, Hydrologic Unit 12100201
+Drainage area: 169 square miles
+Contributing drainage area: 169 square miles,
+Datum of gage: 1,800.22 feet above   NAVD88.
+
+USGS 08165500 Guadalupe Rv at Hunt, TX
+Latitude 30°04'11",   Longitude 99°19'17"   NAD27
+Kerr County, Texas, Hydrologic Unit 12100201
+Drainage area: 288 square miles
+Contributing drainage area: 288 square miles,
+Datum of gage: 1,722.82 feet above   NAVD88.
+
+USGS 08166000 Johnson Ck nr Ingram, TX
+Latitude 30°06'00",   Longitude 99°16'58"   NAD27
+Kerr County, Texas, Hydrologic Unit 12100201
+Drainage area: 114 square miles
+Contributing drainage area: 114 square miles,
+Datum of gage: 1,721.50 feet above   NAVD88.
+
+USGS 08166140 Guadalupe Rv abv Bear Ck at Kerrville, TX
+Latitude 30°04'10",   Longitude 99°11'42"   NAD27
+Kerr County, Texas, Hydrologic Unit 12100201
+Drainage area: 494 square miles
+Contributing drainage area: 494 square miles,
+Datum of gage: 1,622.56 feet above   NAVD88.
+
+USGS 08166200 Guadalupe Rv at Kerrville, TX
+Latitude 30°03'11",   Longitude 99°09'47"   NAD27
+Kerr County, Texas, Hydrologic Unit 12100201
+Drainage area: 510 square miles
+Contributing drainage area: 510 square miles,
+Datum of gage: 1,601.14 feet above   NAVD88.
+
+USGS 08166250 Guadalupe Rv nr Center Point, TX
+Latitude 29°59'16",   Longitude 99°06'36"   NAD83
+Kerr County, Texas, Hydrologic Unit 12100201
+Drainage area: 553 square miles
+Contributing drainage area: 553 square miles,
+Datum of gage: 1,529.54 feet above   NAVD88.
+
+USGS 08167000 Guadalupe Rv at Comfort, TX
+Latitude 29°57'54.86",   Longitude 98°53'49.80"   NAD83
+Kendall County, Texas, Hydrologic Unit 12100201
+Drainage area: 839 square miles
+Contributing drainage area: 839 square miles,
+
+USGS 08167500 Guadalupe Rv nr Spring Branch, TX
+Latitude 29°51'37",   Longitude 98°23'00"   NAD27
+Comal County, Texas, Hydrologic Unit 12100201
+Drainage area: 1,315 square miles
+Contributing drainage area: 1,315 square miles,
+Datum of gage: 948.43 feet above   NAVD88.
