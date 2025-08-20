@@ -8,9 +8,9 @@ library(rvest)
 
 # make a character list of the dates you're interested in scraping
 
-date_char <- c("20250701", "20250702", "20250703", "20250704")
+date_char <- c("20250705", "20250706", "20250707", "20250708","20250709", "20250710", "20250711", "20250712", "20250713", "20250714", "20250715")
 
-for (i in 1:4){
+for (i in 1:11){
 
 
 # read nomads stg4 html page using date from utc_time()
@@ -31,7 +31,7 @@ source_path<-paste0("https://nomads.ncep.noaa.gov/pub/data/nccf/com/pcpanl/prod/
 
 
 # create download destination
-destination_path<-paste0("C:/july_25/stg4/raw_gribs", "/",grib2_available[j])
+destination_path<-paste0("C:/texas_mpe/grib2_manual_scrape", "/",grib2_available[j])
 
 #download the file  
 #download.file (source_path,destination_path,method = "libcurl")  #libcurl betrayed me, threw bad gribs....
