@@ -1,6 +1,7 @@
 library(tidyverse)
 library(ggplot2)
 library(lubridate)
+library(patchwork)
 
 hyet <- read_csv("./hatim/hyetograph_data.csv")
 
@@ -18,7 +19,7 @@ hourly_max_bin <- ggplot(hyet |> filter(rain_type == "max radar bin hourly"),
   labs(
     x = NULL,
     y = "Rain (mm)",
-    title = "Precipitation at maximum stg4 radar bin"
+    title = "Precipitation at max stg4 radar bin"
   ) +
   theme_bw(base_size = 12) +
   theme(
@@ -48,7 +49,7 @@ cumulative_max_bin <- ggplot(cumulative_math,
   labs(
     x = NULL,
     y = "Rain (mm)",
-    title = "Cumulative precipitation at maximum stg4 radar bin"
+    title = "Cumulative precipitation at max stg4 radar bin"
   ) +
   theme_bw(base_size = 12) +
   theme(
@@ -85,10 +86,10 @@ cumulative_hunt_basin <- ggplot(hyet |> filter(rain_type == "hunt basin avg cumu
   )
 
 
+combined <- hourly_max_bin + cumulative_max_bin + cumulative_hunt_basin
 
 
-
-
+ggsave("./hatim/hyetographs.png", combined, width = 14, height = 8, dpi = 300)
 
 
 
