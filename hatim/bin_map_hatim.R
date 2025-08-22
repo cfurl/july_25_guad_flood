@@ -13,7 +13,8 @@ tx_rain <- arrow::open_dataset("C:/texas_mpe/july_flood_no_git/st4_parq_eaa")
 guad<-read_sf("./gis/hunt_poly_hrap_clip.shp")
 
 sum_rain_query <- tx_rain %>%
-  filter(year==2025) %>%
+  filter(year==2025 & day ==4) %>%
+  filter(hour==7 | hour == 8 | hour == 9) %>%
   group_by (grib_id) %>%
   summarize(
     sum_rain = sum(rain_mm, na.rm=TRUE)) %>%
@@ -51,11 +52,11 @@ plot_bin_map<-function(
   
   bbox <- st_bbox(c(
    # xmin = -100.85,
-    xmin = -100,
-    ymin = 29.7, 
+    xmin = -99.8,
+    ymin = 29.8, 
     #xmax = -97.75, 
-    xmax = -98.80,
-    ymax = 30.47
+    xmax = -99.25,
+    ymax = 30.30
   ), crs = 4326)
   
   coord_sys<-3857
@@ -67,16 +68,16 @@ plot_bin_map<-function(
   
   outline<-guad|>summarise(geometry = st_union(geometry))|>  st_cast("MULTILINESTRING")  
   
-  title_pos <- st_sfc(st_point(c(-100, 30.43)), crs = 4326)|>st_transform(point, crs = 3857)
+  title_pos <- st_sfc(st_point(c(-99.8, 30.24)), crs = 4326)|>st_transform(point, crs = 3857)
   title_pos<-as.data.frame(st_coordinates(title_pos))
-  subtitle_pos <- st_sfc(st_point(c(-100, 30.43-0.085)), crs = 4326)|>st_transform(point, crs = 3857)
+  subtitle_pos <- st_sfc(st_point(c(-99.8, 30.24-0.03)), crs = 4326)|>st_transform(point, crs = 3857)
   subtitle_pos<-as.data.frame(st_coordinates(subtitle_pos))
   
   
   plot<-ggplot()+
     annotation_map_tile(
       type = map_type,  # Use the "Carto Light" basemap
-      zoom = 9  # Adjust zoom level as needed
+      zoom = 10  # Adjust zoom level as needed
     )+
     annotate(geom="text",x= title_pos$X,y=title_pos$Y,label=title,size=8,hjust=0, color = pal_title, family=font, fontface='bold')+
     annotate(geom="text",x= subtitle_pos$X,y=subtitle_pos$Y,label=subtitle,size=5,hjust=0, color = pal_subtitle, family=font)+
@@ -109,7 +110,7 @@ plot_bin_map<-function(
     theme(
       text = element_text(family=font),
       legend.position = "inside",
-      legend.position.inside = c(0.75,0.1),  
+      legend.position.inside = c(0.45,0.15),  
       legend.direction = "horizontal", 
       legend.margin = margin(t = 0, r = 10, b = 0, l = 10),
       legend.title = element_text(size = 10, face='bold', color=pal_legend_text), 
@@ -142,8 +143,8 @@ bin_map_light<-plot_bin_map(subtitle= "September 2015 Precipitation. STG4 QPE BI
 #bin_map_light
 
 #dark mode
-bin_map_dark<-plot_bin_map(title = 'Precipitation Across Hunt Drainage basin July 3-4, 2025',
-                           subtitle= "STG4 QPE BIN 4km",
+bin_map_dark<-plot_bin_map(title = 'Precipitation Across Hunt Drainage Basin ',
+                           subtitle= "July 4 6:00-9:00 UTC, 2025",
                            font = "Open Sans",
                            map_rain = map_rain,
                            map_streams = streams,
